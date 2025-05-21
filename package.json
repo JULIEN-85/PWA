@@ -1,11 +1,14 @@
 {
-  "name": "test-pwa",
-  "version": "1.0.0",
+  "name": "test-pwaaa",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
-    "deploy": "vercel deploy --prod"
+    "start": "next start",
+    "deploy": "vercel deploy",
+    "lint": "next lint",
+    "check": "npm run lint"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
@@ -28,19 +31,17 @@
     "clsx": "^2.1.0",
     "lucide-react": "^0.323.0",
     "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-day-picker": "^8.0.0",
-    "react-dom": "^18.2.0",
-    "react-hook-form": "^7.0.0",
-    "recharts": "^2.15.3",
-    "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
     "autoprefixer": "^10.4.21",
+    "eslint": "^9.27.0",
+    "eslint-config-next": "^15.3.2",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.0.0"
