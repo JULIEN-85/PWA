@@ -3,9 +3,6 @@
 // You can safely delete this file.
 
 
-// Correction :
-import { ClassPicLogo } from '@/components/ClassPicLogo';
-
 
 export default function ObsoleteProjectManagementPage() {
   return (
