@@ -1,0 +1,276 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+@tailwind base;
+@tailwind components; 
+@tailwind utilities; 
+
+html[lang="fr"] body {
+  direction: ltr; /* French is left-to-right */
+}
+html[lang="en"] body {
+  direction: ltr; /* English is left-to-right */
+}
+/* Defining CSS variables for light and dark themes */
+@layer base {
+  :root {
+   
+    --background: 207 100% 95%; /* #E3F2FD */
+    --foreground: 224 71% 4%; /* Tailwind slate-900 for text #0f172a */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 224 71% 4%; 
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 207 88% 70%;    /* Soft blue - #64B5F6 */
+    --primary-foreground: 224 71% 4%; /* Dark text on soft blue for accessibility */
+
+    --secondary: 207 80% 75%; /* Slightly lighter blue */
+    --secondary-foreground: 224 71% 4%;
+
+    --muted: 220 14% 96%; /* Tailwind gray-100 #f3f4f6 */
+    --muted-foreground: 220 9% 46%; /* Tailwind gray-500 #6b7280 */
+
+    --accent: 33 100% 65%;   /* Warm orange - #FFB74D */
+    --accent-foreground: 224 71% 4%; /* Dark text on orange */
+
+    --destructive: 0 84.2% 60.2%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 98%; /* Light text on red */
+
+    --border: 220 13% 91%; /* Tailwind gray-200 #e5e7eb */
+    --input: 0 0% 100%; /* White for inputs */
+    --ring: 207 88% 65%; /* Primary for focus rings - slightly darker/more saturated */
+
+    --radius: 0.5rem; /* 8px */
+
+    /* Chart colors (can be adjusted later) */
+    --chart-1: 207 80% 60%;
+    --chart-2: 33 90% 60%;
+    --chart-3: 120 50% 60%; 
+    --chart-4: 280 60% 70%; 
+    --chart-5: 0 70% 70%;   
+
+    /* Sidebar specific colors */
+    --sidebar-background: 0 0% 100%; /* White - #ffffff */
+    --sidebar-foreground: 220 10% 35%; /* Dark Gray - #4b5563 */
+    --sidebar-border: 220 13% 91%; /* Tailwind gray-200 #e5e7eb */
+    --sidebar-active-background: 207 90% 90%; /* Very Light Blue for active item background */
+    --sidebar-active-foreground: 207 88% 50%; /* Primary for active item text */
+    --sidebar-muted-foreground: 220 9% 46%; /* Tailwind gray-500 #6b7280 */
+  }
+
+  .dark {
+    /* Dark Theme (Adjusted based on common dark patterns and new light theme) */
+    --background: 224 71% 4%; /* Tailwind slate-900 - #0f172a */
+    --foreground: 220 14% 71%; /* Tailwind gray-300 - #d1d5db */
+
+    --card: 222 47% 11%; /* Tailwind slate-800 - #1e293b */
+    --card-foreground: 220 14% 71%; 
+
+    --popover: 222 47% 11%; 
+    --popover-foreground: 220 14% 71%;
+
+    --primary: 207 80% 65%;    /* Primary for dark mode, slightly brighter soft blue */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+
+    --secondary: 207 70% 55%; 
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 222 40% 18%; /* Tailwind slate-700 - #334155 */
+    --muted-foreground: 220 13% 65%; /* Tailwind gray-400 - #9ca3af */
+
+    --accent: 33 90% 55%;   /* Orange for dark mode, slightly desaturated */
+    --accent-foreground: 0 0% 100%; 
+
+    --destructive: 0 70% 50%; /* Darker red for dark mode */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 222 40% 23%; /* Tailwind slate-600 - #475569 */
+    --input: 222 40% 18%; /* Tailwind slate-700 */
+    --ring: 207 80% 70%; 
+    
+    /* Sidebar specific colors - Dark */
+    --sidebar-background: 224 71% 4%; /* Same as page background for integrated look, or slightly lighter like slate-850 */
+    --sidebar-foreground: 220 14% 71%; /* Tailwind gray-300 */
+    --sidebar-border: 222 40% 23%; /* Tailwind slate-600 */
+    --sidebar-active-background: 207 70% 25%; /* Darker primary blue selection */
+    --sidebar-active-foreground: 207 80% 80%; /* Lighter primary blue text on selection */
+    --sidebar-muted-foreground: 220 13% 65%; /* Tailwind gray-400 */
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    border-width: 0px;
+    border-style: solid;
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    /* font-family: 'Inter', sans-serif; <-- This was removed to allow Tailwind's font-sans to take effect */
+  }
+}
+
+/* Custom styles from the provided HTML merged with ShadCN structure */
+.sidebar {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.project-card {
+  transition: all 0.3s ease;
+}
+/* 
+.project-card:not(.project-card-menu-open):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+} 
+*/
+
+/* .search-input:focus {
+  ShadCN input handles focus ring via --ring variable, direct box-shadow might not be needed
+  box-shadow: 0 0 0 3px hsla(var(--primary) / 0.2);
+} */
+/* ShadCN Select will handle its own arrow. */
+/* .custom-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+} */
+
+
+/* Additional styles if any */
+/* Example: if you had specific progress bar colors not covered by theme */
+/* Ensure progress bar background is consistent with ShadCN Progress component which uses bg-secondary by default for track */
+.progress-bar-blue .bg-primary {
+  background-color: hsl(var(--primary)) !important; 
+}
+.progress-bar-green .bg-green-500 {
+  background-color: #22c55e !important; 
+}
+.progress-bar-purple .bg-purple-500 {
+  background-color: #a855f7 !important;
+}
+.progress-bar-amber .bg-amber-500 {
+  background-color: #f59e0b !important;
+}
+.progress-bar-red .bg-red-500 {
+  background-color: #ef4444 !important;
+}
+
+/* Ensure Remixicon path is corrected if used, or prefer Lucide. This is a placeholder. */
+/* @font-face {
+  font-family: 'remixicon';
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.eot?t=1694489330807'); 
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.eot?t=1694489330807#iefix') format('embedded-opentype'),
+       url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.woff2?t=1694489330807') format('woff2'),
+       url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.woff?t=1694489330807') format('woff'),
+       url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.ttf?t=1694489330807') format('truetype'),
+       url('https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.svg?t=1694489330807#remixicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ri-"], [class*=" ri-"] {
+  font-family: 'remixicon' !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+/* Specific custom checkbox/switch styles from the HTML (might be replaceable by ShadCN later) */
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: hsl(var(--card)); /* Use theme color */
+  border: 2px solid hsl(var(--border)); /* Use theme color */
+  border-radius: 4px; /* Or var(--radius-sm) */
+  transition: all 0.2s ease;
+}
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.custom-checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid hsl(var(--primary-foreground)); /* Ensure contrast */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.custom-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.custom-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(var(--muted)); /* Use theme color */
+  transition: .4s;
+  border-radius: 34px; /* Or var(--radius-full) */
+}
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: hsl(var(--card)); /* Use theme color */
+  transition: .4s;
+  border-radius: 50%; /* Or var(--radius-full) */
+}
+input:checked + .switch-slider {
+  background-color: hsl(var(--primary));
+}
+input:checked + .switch-slider:before {
+  transform: translateX(20px);
+}
+.font-pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+
