@@ -1,10 +1,3 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/archives/page": "app/archives/page.js",
-  "/page": "app/page.js",
-  "/capture/page": "app/capture/page.js",
-  "/settings/page": "app/settings/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/project-details/page": "app/project-details/page.js",
-  "/project-management/page": "app/project-management/page.js"
+  "/page": "app/page.js"
 }

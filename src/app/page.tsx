@@ -623,7 +623,7 @@ export default function HomePage() {
                 <div
                   key={proj.id}
                   className={cn(
-                    "project-card bg-card overflow-hidden rounded-lg shadow-sm border border-border",
+                    "project-card bg-card overflow-hidden rounded-lg shadow-sm border border-border h-[215px]", //  modified height
                      activeProjectMenu === proj.id && "project-card-menu-open"
                   )}
                 >
@@ -751,7 +751,7 @@ export default function HomePage() {
                     setEditingProjectId(null);
                 }
               }}>
-                <div className="project-card bg-card overflow-hidden rounded-lg shadow-sm border border-border border-dashed flex items-center justify-center p-6 min-h-[260px] sm:min-h-[294px]">
+                <div className="project-card bg-card overflow-hidden rounded-lg shadow-sm border border-border border-dashed flex items-center justify-center p-6 min-h-[260px] sm:min-h-[215px]">
                   <Button variant="ghost" className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors duration-200 h-full w-full group" onClick={handleOpenNewProjectModal}>
                     <div className="w-12 h-12 flex items-center justify-center border-2 border-dashed border-muted-foreground/50 rounded-full mb-2 group-hover:border-primary">
                       <Plus className="w-6 h-6 group-hover:text-primary" />
