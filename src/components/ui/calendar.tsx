@@ -3,9 +3,12 @@
 import * as React from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { DayPicker } from "react-day-picker"
+import { fr } from 'date-fns/locale' // Ajout de la locale française
+
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
+import locale from "date-fns/locale/af"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
@@ -17,6 +20,7 @@ function Calendar({
 }: CalendarProps) {
   return (
     <DayPicker
+      locale={fr} // Ajout de la locale
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
       classNames={{
@@ -53,14 +57,7 @@ function Calendar({
         day_hidden: "invisible",
         ...classNames,
       }}
-      components={{
-        IconLeft: ({ ...props }) => (
-          <ChevronLeft className={cn("h-4 w-4", props.className)} />
-        ),
-        IconRight: ({ ...props }) => (
-          <ChevronRight className={cn("h-4 w-4", props.className)} />
-        ),
-      }}
+      // Removed unsupported 'components' prop with 'PrevIcon' and 'NextIcon'
       {...props}
     />
   )
