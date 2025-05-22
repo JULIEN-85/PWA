@@ -1,3 +1,6 @@
+import nextPwa from 'next-pwa';
+
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
@@ -12,13 +15,31 @@ const nextConfig = {
       },
     ]
   },
-  // Ajout de la configuration du serveur
-  server: {
-    host: '0.0.0.0',
-    port: 3000
+  images: {
+    domains: ['localhost'],
+    unoptimized: true
   },
-  // Désactiver le strict mode pour le développement
   reactStrictMode: false,
-}
+  swcMinify: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false, path: false };
+    return config;
+  }
+};
 
-module.exports = nextConfig
+export default nextPwa({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development',
+  runtimeCaching: [
+{
+    urlPattern: /^.*$/, // met en cache toutes les routes et assets
+    handler: 'CacheFirst',
+    options: {
+      cacheName: 'all-app',
+      expiration: { maxEntries: 200, maxAgeSeconds: 7 * 24 * 60 * 60 }, // 7 jours
+     },
+    },
+  ],
+})(nextConfig);

@@ -29,12 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${inter.variable} ${pacifico.variable}`}>
-      {/* 
-        La classe 'dark' sera gérée dynamiquement par le code client (localStorage et Switch).
-        Pour éviter un flash de contenu non stylisé (FOUC) ou un flash du mauvais thème,
-        une approche plus avancée impliquerait un script dans <head> ou un ThemeProvider.
-        Pour l'instant, l'effet dans la page /settings gérera le thème.
-      */}
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0f172a" />
+      </head>
       <body className="font-sans antialiased">
         {children}
         <Toaster />
