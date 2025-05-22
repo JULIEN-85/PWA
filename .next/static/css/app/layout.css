@@ -1095,6 +1095,9 @@ body {
 .h-\[1px\]{
   height: 1px;
 } 
+.h-\[215px\]{
+  height: 215px;
+} 
 .h-\[60px\]{
   height: 60px;
 } 
@@ -1115,33 +1118,6 @@ body {
 } 
 .h-svh{
   height: 100svh;
-} 
-.h-\[260px\]{
-  height: 260px;
-} 
-.h-\[200px\]{
-  height: 200px;
-} 
-.h-\[205px\]{
-  height: 205px;
-} 
-.h-\[210px\]{
-  height: 210px;
-} 
-.h-\[220px\]{
-  height: 220px;
-} 
-.h-\[215px\]{
-  height: 215px;
-} 
-.h-\[218px\]{
-  height: 218px;
-} 
-.h-\[217px\]{
-  height: 217px;
-} 
-.h-\[216px\]{
-  height: 216px;
 } 
 .max-h-32{
   max-height: 8rem;
@@ -2717,16 +2693,6 @@ input:checked + .switch-slider:before {
 
   .sm\:flex{
     display: flex;
-  }
-
-
-  .sm\:min-h-\[294px\]{
-    min-height: 294px;
-  }
-
-
-  .sm\:min-h-\[220px\]{
-    min-height: 220px;
   }
 
 
